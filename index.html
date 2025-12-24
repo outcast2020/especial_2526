@@ -264,7 +264,7 @@ const FALLBACK_POEMS = [{"author": "Fernando Pessoa", "title": "IV - I could not
 // Você também pode passar ?data=https://.../poems.json
 async function loadLocalDataset(){
   const u = new URL(location.href);
-  const dataUrl = u.searchParams.get('data') || './data/poems.json';
+  const dataUrl = u.searchParams.get('data') || 'poems.json';
   try {
     const res = await fetch(dataUrl, { cache: 'no-store' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
