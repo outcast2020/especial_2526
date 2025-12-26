@@ -1,3 +1,11 @@
+"""Funções de carregamento e validação do dataset de poemas."""
+import pandas as pd
+
+from .config import DATA_PATH
+
+
+def load_df() -> pd.DataFrame:
+    df = pd.read_csv(DATA_PATH)
 """Funções de carregamento e validação do dataset de poemas via KaggleHub."""
 import os
 import pandas as pd

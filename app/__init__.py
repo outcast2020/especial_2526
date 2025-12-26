@@ -1,3 +1,4 @@
+"""Inicialização do módulo de aplicação do buscador de poemas."""
  (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/app/__init__.py b/app/__init__.py
 new file mode 100644
