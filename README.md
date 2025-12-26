@@ -66,6 +66,21 @@ export API_URL=http://localhost:8000
 streamlit run ui/streamlit_app.py
 ```
 
+## Empacotar para Windows (PyInstaller + Inno Setup)
+1. Gere o executável incluindo o dataset offline:
+   ```bash
+   pyinstaller --noconfirm --onedir ^
+     --add-data "data\\poems.csv;data" ^
+     --name "poesia-buscador" scripts\\run_api.py
+   ```
+   A pasta `dist/poesia-buscador` conterá `poesia-buscador.exe` e `data/poems.csv`.
+
+2. Crie o instalador com o Inno Setup usando `scripts/installer.iss`:
+   ```bash
+   iscc scripts\\installer.iss
+   ```
+   O instalador é gravado em `dist/installer/poesia-buscador-setup.exe` e instala o executável e o `poems.csv` localmente.
+
 ## Notas de implementação e performance
 - O índice é montado em memória em `scripts/build_index.py` usando as chaves `_rk2/_rk3/_rk4/_vtail`, `_tail3` (últimos 3 versos) e normalizações `_norm_poem`.
 - Para datasets grandes, cacheie o TF-IDF (`build_tfidf`) e, se necessário, persista matrizes/artefatos para não reconstruir a cada boot.
