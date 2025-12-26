@@ -1,4 +1,3 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/Dockerfile b/Dockerfile
 new file mode 100644
 index 0000000000000000000000000000000000000000..f716fa4274da364f6bbc2ca91a20d3511c49e817
@@ -17,6 +16,3 @@ index 0000000000000000000000000000000000000000..f716fa4274da364f6bbc2ca91a20d351
 +
 +EXPOSE 8000
 +CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]
- 
-EOF
-)
