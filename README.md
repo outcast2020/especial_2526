@@ -1,4 +1,3 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/README.md b/README.md
 new file mode 100644
 index 0000000000000000000000000000000000000000..44054d78d0184d24b3580a3291e0fab2b73a0e61
@@ -81,6 +80,3 @@ index 0000000000000000000000000000000000000000..44054d78d0184d24b3580a3291e0fab2
 +  README.md
 +  .gitignore
 +```
- 
-EOF
-)
