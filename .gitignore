@@ -23,3 +23,34 @@ site/
 .hypothesis/
 data/*.csv
 data/models/
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000000000000000000000000000000000000..0868a17923d2fd88388af3eb557942caa3ccfa56
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,25 @@
++__pycache__/
++*.py[cod]
++*.sqlite3
++.env
++.venv/
++.env.local
++.env.*
++.DS_Store
++.idea/
++.vscode/
++.pytest_cache/
++.mypy_cache/
++.cache/
++.eggs/
++*.egg-info/
++dist/
++build/
++site/
++*.log
++.poetry*
++*.coverage
++.coverage*
++.hypothesis/
++data/*.csv
++data/models/
