@@ -1,3 +1,4 @@
+## syntax=docker/dockerfile:1
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -22,7 +23,6 @@ index 0000000000000000000000000000000000000000..f716fa4274da364f6bbc2ca91a20d351
 +
 +COPY requirements.txt ./
 +RUN pip install --no-cache-dir -r requirements.txt
-+
 +COPY . .
 +ENV POEMS_CSV_PATH=data/poems.csv
 +
