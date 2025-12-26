@@ -1,9 +1,9 @@
 diff --git a/README.md b/README.md
 new file mode 100644
-index 0000000000000000000000000000000000000000..44054d78d0184d24b3580a3291e0fab2b73a0e61
+index 0000000000000000000000000000000000000000..24e7a235ed1348824fded40dbf838666c44c2060
 --- /dev/null
 +++ b/README.md
-@@ -0,0 +1,76 @@
+@@ -0,0 +1,97 @@
 +# Buscador de Rimas & Temáticas (Poemas PT)
 +
 +Aplicação FastAPI + Streamlit para sugerir rimas e temas a partir de poemas em português. Usa TF-IDF para similaridade temática e heurísticas de sufixo/vogais para rimas, com prateleiras de popularidade balanceadas por quantis de views.
@@ -16,6 +16,27 @@ index 0000000000000000000000000000000000000000..44054d78d0184d24b3580a3291e0fab2
 +- `Views` (numérico)
 +
 +Configure o caminho via variável de ambiente `POEMS_CSV_PATH` (default: `data/poems.csv`). Para datasets grandes, baixe no deploy ou use Git LFS e evite carregar tudo no repo.
++
++### Baixar dataset via Kaggle (opcional)
++Você pode carregar o dataset público “poems-in-portuguese” com `kagglehub` em notebooks ou scripts auxiliares. Exemplo:
++
++```python
++# pip install kagglehub[pandas-datasets]
++import kagglehub
++from kagglehub import KaggleDatasetAdapter
++
++file_path = ""  # caminho para o arquivo dentro do dataset (ex.: "poems.csv")
++
++df = kagglehub.load_dataset(
++    KaggleDatasetAdapter.PANDAS,
++    "oliveirasp6/poems-in-portuguese",
++    file_path,
++)
++
++print("First 5 records:", df.head())
++```
++
++Autentique-se via variáveis de ambiente ou arquivo local ignorado no Git (`~/.kaggle/kaggle.json`).
 +
 +## Execução da API
 +Requisitos: Python 3.11.
